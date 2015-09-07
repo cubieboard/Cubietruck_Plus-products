@@ -1,0 +1,10 @@
+#!/bin/sh
+
+tf_card=/dev/mmcblk0
+
+if [ -f /root/firstrun ]; then
+	echo firstup setup begin
+	rm /root/firstrun
+	echo firstup setup done
+	reboot
+fi

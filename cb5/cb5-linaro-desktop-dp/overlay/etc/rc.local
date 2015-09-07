@@ -1,0 +1,28 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+# Generate the SSH keys if non-existent
+test -f /etc/ssh/ssh_host_dsa_key || dpkg-reconfigure openssh-server
+
+# audio amixer controls setting
+# headphoneout
+amixer cset numid=84  1 
+amixer cset numid=88  1
+
+# setting default  mic record :  mic1
+amixer cset numid=99  1 
+amixer cset numid=95  1 
+amixer cset numid=41  1
+amixer cset numid=34  1
+
+exit 0

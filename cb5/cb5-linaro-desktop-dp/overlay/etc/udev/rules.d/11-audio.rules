@@ -1,0 +1,3 @@
+DEVPATH=="/devices/virtual/switch/h2w", RUN+="/bin/audio-judge.sh"
+
+
